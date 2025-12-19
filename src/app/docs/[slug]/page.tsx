@@ -3,8 +3,8 @@ import { getDocBySlug, getAllDocs } from "@/lib/docs";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { cn } from "@/lib/utils"; // Assuming utils exists if not created in previous steps, but it heavily relies on clsx twMerge
-import { Anchor, Copy, Check } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 import React from "react";
 
 // Add MDX components
@@ -101,13 +101,11 @@ export default async function DocPage(props: { params: Promise<{ slug: string }>
       </article>
       
       <div className="mt-20 pt-10 border-t border-white/10">
+
         <div className="flex justify-between">
             <Link href="/docs/introduction" className="text-sm text-zinc-500 hover:text-white transition-colors">
                 &larr; Back to Home
             </Link>
-            <a href="#" className="text-sm text-zinc-500 hover:text-white transition-colors">
-                Edit this page on GitHub &rarr;
-            </a>
         </div>
       </div>
     </div>
