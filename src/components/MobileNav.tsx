@@ -25,19 +25,27 @@ export function MobileNav() {
       document.body.style.overflow = "unset";
     }
     return () => {
-        document.body.style.overflow = "unset";
+      document.body.style.overflow = "unset";
     }
   }, [isOpen]);
 
   return (
     <>
       <header className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-xl border-b border-white/5">
-        <div className="flex items-center gap-3">
-
-          <div className="h-8 w-8 rounded-lg bg-linear-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-            <span className="font-bold text-white text-sm">M</span>
+        <div className="flex items-center gap-2 group cursor-default">
+          <img
+            src="/mentrex-logo.png"
+            alt="Mentrex Logo"
+            className="w-10 h-10 rounded-lg shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/40 transition-all border border-amber-500/30 invert"
+          />
+          <div className="flex flex-col h-10 justify-center">
+            <span className="font-heading font-bold text-lg tracking-tight text-white group-hover:text-amber-500 transition-colors leading-none">
+              MENTREX
+            </span>
+            <span className="text-[11px] font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors leading-none tracking-wide mt-1">
+              by SyncFlo AI
+            </span>
           </div>
-          <span className="font-bold text-xl tracking-tight text-white/90">Mentrex</span>
         </div>
         <button
           type="button"
@@ -60,7 +68,7 @@ export function MobileNav() {
               onClick={() => setIsOpen(false)}
               className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm lg:hidden"
             />
-            
+
             {/* Drawer */}
             <motion.div
               initial={{ x: "100%" }}
@@ -83,12 +91,12 @@ export function MobileNav() {
               <div className="flex-1 overflow-y-auto">
                 <NavContent onItemClick={() => setIsOpen(false)} />
               </div>
-              
-                <div className="mt-8 pt-6 border-t border-white/10">
-                    <p className="text-xs text-zinc-500 text-center">
-                        © 2025 Mentrex AI
-                    </p>
-                </div>
+
+              <div className="mt-8 pt-6 border-t border-white/10">
+                <p className="text-xs text-zinc-500 text-center">
+                  © 2025 Mentrex AI
+                </p>
+              </div>
             </motion.div>
           </>
         )}
